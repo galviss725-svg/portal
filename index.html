@@ -3,338 +3,650 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nexus Hub — Portafolio de Proyectos Web Profesionales</title>
-  <meta name="description" content="Centro de acceso a los proyectos web desarrollados: NEXORA PC (Tienda Gaming & Configurador) y Nexus Media (Agencia Creativa Digital).">
+  <title>Nexus Media | Agencia creativa — Tu marca, llevada al siguiente nivel</title>
+  <meta name="description" content="Nexus Media es una agencia creativa: diseño gráfico, contenido digital, video, fotografía, publicidad, redes sociales y soluciones con inteligencia artificial.">
+  <meta name="theme-color" content="#070B16">
+  <meta property="og:title" content="Nexus Media — Tu marca, llevada al siguiente nivel">
+  <meta property="og:description" content="Creatividad, tecnología e inteligencia artificial para marcas que quieren destacar.">
+  <meta property="og:image" content="assets/img/banner-visual.webp">
+  <link rel="icon" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #07090e;
-      --card-bg: #0f131f;
-      --cyan: #00f2fe;
-      --violet: #8b5cf6;
-      --blue: #2563eb;
-      --grad: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 50%, var(--violet) 100%);
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 50px 20px;
-      background-image: 
-        radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(0, 242, 254, 0.12) 0%, transparent 45%);
-    }
-    .wrap {
-      width: min(1180px, 100%);
-      margin: 0 auto;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(0, 242, 254, 0.12);
-      border: 1px solid rgba(0, 242, 254, 0.3);
-      color: var(--cyan);
-      font-size: 0.8rem;
-      font-weight: 700;
-      padding: 6px 16px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 16px;
-    }
-    .badge::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 8px var(--cyan);
-    }
-    h1 {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-    h1 span {
-      background: var(--grad);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    p.lead {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 650px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-    .portal-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 36px;
-    }
-    .portal-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(139, 92, 246, 0.25);
-      border-radius: 24px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-    }
-    .portal-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--cyan);
-      box-shadow: 0 25px 60px -15px rgba(0, 242, 254, 0.3);
-    }
-
-    /* Área de Previsualización: Proporción perfecta sin aplastamiento */
-    .card-preview {
-      aspect-ratio: 16/9;
-      background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15) 0%, #090c15 85%);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      border-bottom: 1px solid rgba(139, 92, 246, 0.15);
-    }
-    .card-preview img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
-      transition: transform 0.4s ease;
-      display: block;
-    }
-    .portal-card:hover .card-preview img {
-      transform: scale(1.05);
-    }
-
-    /* Cabecera de Logo en la Tarjeta */
-    .card-logo-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(139, 92, 246, 0.15);
-    }
-    .logo-badge-nexora {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 0.05em;
-    }
-    .logo-symbol-sm {
-      width: 38px;
-      height: 38px;
-      background: var(--grad);
-      border-radius: 9px;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 0 16px rgba(0, 242, 254, 0.35);
-      flex-shrink: 0;
-    }
-    .logo-symbol-sm svg {
-      width: 22px;
-      height: 22px;
-      fill: #050811;
-    }
-    .logo-badge-nexora span {
-      color: var(--cyan);
-    }
-
-    /* Logo oficial de Nexus Media con proporción 100% natural */
-    .nexus-logo-img {
-      height: 44px;
-      width: auto;
-      max-width: 200px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .card-content {
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .card-tag {
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: var(--cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      background: rgba(0, 242, 254, 0.1);
-      border: 1px solid rgba(0, 242, 254, 0.25);
-      padding: 4px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
-    h2 {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 1.85rem;
-      margin-bottom: 12px;
-    }
-    .desc {
-      color: var(--text-muted);
-      font-size: 0.96rem;
-      line-height: 1.6;
-      margin-bottom: 22px;
-    }
-    .feature-list {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      margin-bottom: 28px;
-      font-size: 0.9rem;
-      color: #cbd5e1;
-    }
-    .feature-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .feature-list li::before {
-      content: "✓";
-      color: var(--cyan);
-      font-weight: 800;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      transition: all 0.25s;
-      margin-top: auto;
-    }
-    .btn-primary {
-      background: var(--grad);
-      color: #050811;
-      box-shadow: 0 10px 25px -8px rgba(0, 242, 254, 0.5);
-    }
-    .btn-primary:hover {
-      box-shadow: 0 14px 35px -5px rgba(0, 242, 254, 0.75);
-      filter: brightness(1.1);
-      transform: translateY(-2px);
-    }
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-    }
-    @media (max-width: 860px) {
-      .portal-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="color-scheme" content="dark">
 </head>
 <body>
+
+<!-- Iconos (sprite SVG) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="ng" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00B7FF"/><stop offset=".55" stop-color="#087BFF"/><stop offset="1" stop-color="#9657FF"/></linearGradient>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M22 7 13.5 15.5l-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M9 2v2M15 20v2M9 20v2M2 15h2M2 9h2M20 15h2M20 9h2"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".6"/><circle cx="17.5" cy="10.5" r=".6"/><circle cx="8.5" cy="7.5" r=".6"/><circle cx="6.5" cy="12.5" r=".6"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.83-.44-1.12-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2z"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m22 8-6 4 6 4V8z"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0L14.06 8.5a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M9.2 8.6c.2 2.4 2.8 5.3 5.9 6.1l1.3-1.3a.7.7 0 0 1 .7-.2l1.5.6c.3.1.5.4.4.7-.2 1-1 1.6-2 1.5-4-.4-7.2-3.4-7.7-7.4-.1-1 .5-1.8 1.4-2 .3-.1.6.1.7.4l.6 1.5c.1.3 0 .5-.2.7z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15a.5.5 0 0 0 .77.42l12-7.5a.5.5 0 0 0 0-.84l-12-7.5A.5.5 0 0 0 7 4.5z" fill="currentColor" stroke="none"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<!-- ============ NAVEGACIÓN ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="nav__logo" href="#inicio" aria-label="Nexus Media — inicio">
+      <img src="assets/img/logo-full.png" alt="Nexus Media" width="362" height="104">
+    </a>
+    <nav class="nav__links" id="menu" aria-label="Principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#metricas">Métricas</a>
+      <a href="#planes">Planes</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#testimonios">Opiniones</a>
+      <a href="#contacto">Contacto</a>
+      <span class="live-pill">🟢 Cupos disponibles</span>
+      <a class="btn btn--primary nav__cta" href="#contacto" data-pick-service="">Solicitar asesoría <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero__bg" id="heroBg" aria-hidden="true">
+    <span class="beam beam--a" data-speed="40"></span><span class="beam beam--b" data-speed="70"></span>
+    <span class="glow glow--a"></span><span class="glow glow--b"></span>
+  </div>
+
+  <div class="visual" id="visual" aria-hidden="true">
+    <div class="visual__tilt" id="visualTilt">
+      <img class="visual__bloom" src="assets/img/banner-visual.webp" alt="" width="1113" height="693">
+      <img class="visual__img" src="assets/img/banner-visual.webp" alt="" width="1113" height="693" fetchpriority="high">
+    </div>
+  </div>
+
+  <div class="wrap hero__in">
+    <div class="hero__copy">
+      <span class="hero__kicker" id="kicker">CREATIVIDAD / TECNOLOGÍA / RESULTADOS</span>
+      <h1>
+        <span class="hero__line"><span>Tu marca, llevada al</span></span>
+        <span class="hero__line"><span class="grad">siguiente nivel.</span></span>
+      </h1>
+      <p class="lead" id="heroLead">Conectamos creatividad, tecnología e inteligencia artificial para transformar ideas en experiencias digitales que destacan.</p>
+      <div class="hero__btns" id="heroBtns">
+        <a class="btn btn--primary btn--lg" href="#servicios">Explorar servicios <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost btn--lg" href="#portafolio">Ver nuestro portafolio <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </div>
+      <a class="hero__wa" id="heroWa" data-wa="Hola Nexus Media, quiero información sobre sus servicios." target="_blank" rel="noopener">
+        <svg class="ic"><use href="#i-wa"/></svg> ¿Prefieres escribirnos? Habla con nosotros por WhatsApp
+      </a>
+      <ul class="hero__svcs" id="heroSvcs" aria-label="Servicios principales">
+        <li class="hs"><svg class="ic"><use href="#i-palette"/></svg><span>Diseño<br>gráfico</span></li>
+        <li class="hs"><svg class="ic"><use href="#i-video"/></svg><span>Contenido<br>audiovisual</span></li>
+        <li class="hs"><svg class="ic"><use href="#i-trend"/></svg><span>Marketing<br>digital</span></li>
+        <li class="hs"><svg class="ic"><use href="#i-phone"/></svg><span>Redes<br>sociales</span></li>
+        <li class="hs"><svg class="ic"><use href="#i-cpu"/></svg><span>IA<br>creativa</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MÉTRICAS CLAVE ============ -->
+<section class="metrics-section" id="metricas">
   <div class="wrap">
-    <header>
-      <div class="badge">Portafolio de Proyectos Web</div>
-      <h1>Experiencias Web <span>de Alto Nivel</span></h1>
-      <p class="lead">Selecciona cualquiera de las dos páginas web optimizadas para abrirlas de inmediato en tu navegador con diseño ultra profesional y funciones interactivas.</p>
+    <div class="metrics-grid">
+      <div class="metric-box reveal">
+        <span class="metric-number">+48</span>
+        <span class="metric-title">Marcas Transformadas</span>
+        <span class="metric-desc">En Colombia y Latinoamérica</span>
+      </div>
+      <div class="metric-box reveal" style="--d:.06s">
+        <span class="metric-number">+1.5M</span>
+        <span class="metric-title">Visualizaciones Generadas</span>
+        <span class="metric-desc">Campañas en Instagram, TikTok y Reels</span>
+      </div>
+      <div class="metric-box reveal" style="--d:.12s">
+        <span class="metric-number">+310%</span>
+        <span class="metric-title">Crecimiento Promedio</span>
+        <span class="metric-desc">En interacción y nuevos prospectos</span>
+      </div>
+      <div class="metric-box reveal" style="--d:.18s">
+        <span class="metric-number">99.8%</span>
+        <span class="metric-title">Entregas a Tiempo</span>
+        <span class="metric-desc">Flujos optimizados con inteligencia artificial</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="section" id="servicios">
+  <div class="wrap">
+    <header class="head reveal">
+      <h2>Todo lo que tu marca necesita para destacar</h2>
+      <p class="lead">Desde la idea hasta la pieza final: diseño, contenido, estrategia y tecnología trabajando juntos.</p>
     </header>
 
-    <div class="portal-grid">
-      <!-- Card 1: NEXORA PC -->
-      <article class="portal-card">
-        <div class="card-preview">
-          <img src="imagenes/pcgam_newj.1280.webp" alt="NEXORA PC — Tienda Gaming & Configurador">
-        </div>
-        <div class="card-content">
-          <div class="card-logo-bar">
-            <div class="logo-badge-nexora">
-              <div class="logo-symbol-sm">
-                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              <div>NEXORA<span>PC</span></div>
-            </div>
-            <span class="card-tag">Hardware & Gaming</span>
-          </div>
+    <div class="services">
+      <article class="svc reveal">
+        <div class="svc__ic"><svg class="ic"><use href="#i-palette"/></svg></div>
+        <h3>Diseño gráfico</h3>
+        <p>Logos, flyers, publicaciones, banners y piezas publicitarias con identidad y personalidad.</p>
+        <a href="#contacto" class="svc__link" data-pick-service="Diseño gráfico">Conocer servicio <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="svc reveal" style="--d:.06s">
+        <div class="svc__ic"><svg class="ic"><use href="#i-video"/></svg></div>
+        <h3>Producción audiovisual</h3>
+        <p>Edición de video y creación de contenido en movimiento para contar la historia de tu marca.</p>
+        <a href="#contacto" class="svc__link" data-pick-service="Producción audiovisual">Conocer servicio <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="svc reveal" style="--d:.12s">
+        <div class="svc__ic"><svg class="ic"><use href="#i-camera"/></svg></div>
+        <h3>Fotografía</h3>
+        <p>Contenido visual para marcas y productos que se ve profesional en cualquier pantalla.</p>
+        <a href="#contacto" class="svc__link" data-pick-service="Fotografía">Conocer servicio <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="svc reveal">
+        <div class="svc__ic"><svg class="ic"><use href="#i-megaphone"/></svg></div>
+        <h3>Marketing digital</h3>
+        <p>Publicidad y estrategias de comunicación pensadas para que tu mensaje llegue a quien importa.</p>
+        <a href="#contacto" class="svc__link" data-pick-service="Marketing digital">Conocer servicio <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="svc reveal" style="--d:.06s">
+        <div class="svc__ic"><svg class="ic"><use href="#i-phone"/></svg></div>
+        <h3>Gestión de redes sociales</h3>
+        <p>Planificación, creación y organización de contenidos para mantener tus redes activas y coherentes.</p>
+        <a href="#contacto" class="svc__link" data-pick-service="Gestión de redes sociales">Conocer servicio <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="svc reveal" style="--d:.12s">
+        <div class="svc__ic"><svg class="ic"><use href="#i-sparkles"/></svg></div>
+        <h3>Soluciones con IA</h3>
+        <p>Apoyo creativo y optimización de procesos con inteligencia artificial para crear más y mejor.</p>
+        <a href="#contacto" class="svc__link" data-pick-service="Soluciones con inteligencia artificial">Conocer servicio <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
 
-          <h2>NEXORA PC</h2>
-          <p class="desc">Plataforma de venta de computadores gamer, workstations y componentes de alta gama en Colombia. Ensambles certificados y estética cyberpunk.</p>
-          
-          <ul class="feature-list">
-            <li>Catálogo interactivo con precios en COP y filtros por presupuesto</li>
-            <li>Calculadora dinámica de FPS estimada por juego y resolución</li>
-            <li>Configurador "Arma tu PC" con validación de compatibilidad</li>
-            <li>Carrito de compras y checkout directo con mensaje formateado por WhatsApp</li>
-            <li>Sección de testimonios de gamers y políticas de garantía en Colombia</li>
+<!-- ============ SHOWREEL ============ -->
+<section class="reel" aria-label="Video comercial">
+  <div class="wrap">
+    <div class="reel__box reveal">
+      <video id="reel" muted loop playsinline preload="metadata" poster="assets/video/poster.jpg" aria-label="Comercial publicitario producido para un par de zapatillas">
+        <source src="assets/video/comercial.mp4" type="video/mp4">
+        <source src="assets/video/comercial.webm" type="video/webm">
+      </video>
+      <div class="reel__shade"></div>
+      <div class="reel__txt">
+        <h2>Tu producto en movimiento</h2>
+        <p>Comerciales y piezas de video que le dan vida a tu marca.</p>
+      </div>
+      <button class="reel__play" id="reelBtn" aria-label="Reproducir video">
+        <svg class="ic ic--fill"><use href="#i-play"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLANES ============ -->
+<section class="section section--tint" id="planes">
+  <div class="wrap">
+    <header class="head reveal">
+      <h2>Elige el plan que impulsa tu marca</h2>
+      <p class="lead">Cuatro opciones mensuales para llevar tu contenido y tu presencia digital al ritmo que necesitas.</p>
+    </header>
+
+    <div class="plans">
+      <article class="plan reveal" data-plan="Lanzamiento Digital">
+        <div class="plan__img"><img src="assets/img/colombiana-sm.webp" alt="Ejemplo de pieza para redes sociales" loading="lazy" width="600" height="600"></div>
+        <div class="plan__body">
+          <span class="plan__n">Plan 1</span>
+          <h3>Lanzamiento Digital</h3>
+          <p class="price"><strong>$400.000</strong> <small>COP / mes</small></p>
+          <ul class="ticks">
+            <li><svg class="ic"><use href="#i-check"/></svg> 5 piezas mensuales</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Reporte mensual</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Gestión de redes sociales</li>
           </ul>
-
-          <a class="btn btn-primary" href="nexora.html">
-            Abrir NEXORA PC →
-          </a>
+          <div class="plan__btns">
+            <button class="btn btn--primary" data-choose>Elegir este plan</button>
+            <a class="btn btn--wa" data-wa="Hola Nexus Media, quiero consultar el plan Lanzamiento Digital ($400.000 COP)." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> Consultar por WhatsApp</a>
+          </div>
         </div>
       </article>
 
-      <!-- Card 2: NEXUS MEDIA -->
-      <article class="portal-card">
-        <div class="card-preview">
-          <img src="nexus-media/nexus-media/assets/img/banner-visual.webp" alt="Nexus Media — Agencia Creativa Digital">
-        </div>
-        <div class="card-content">
-          <div class="card-logo-bar">
-            <img src="nexus-media/nexus-media/assets/img/logo-full.png" alt="Nexus Media Logo" class="nexus-logo-img">
-            <span class="card-tag">Agencia Creativa</span>
-          </div>
-
-          <h2>Nexus Media</h2>
-          <p class="desc">Sitio web corporativo de agencia creativa de medios: diseño gráfico, producción audiovisual cinematográfica, marketing digital y soluciones con inteligencia artificial.</p>
-
-          <ul class="feature-list">
-            <li>Showreel comercial interactivo en video para campañas de producto</li>
-            <li>Galería de portafolio tipo Lightbox con filtros por categoría</li>
-            <li>Sección de métricas clave (+48 marcas, +1.5M visualizaciones)</li>
-            <li>Calculadora interactiva de inversión mensual y adicionales</li>
-            <li>Testimonios de marcas clientes y contacto directo por WhatsApp y correo</li>
+      <article class="plan reveal" style="--d:.06s" data-plan="Crecimiento Activo">
+        <div class="plan__img"><img src="assets/img/monster-sm.webp" alt="Ejemplo de campaña publicitaria" loading="lazy" width="600" height="640"></div>
+        <div class="plan__body">
+          <span class="plan__n">Plan 2</span>
+          <h3>Crecimiento Activo</h3>
+          <p class="price"><strong>$600.000</strong> <small>COP / mes</small></p>
+          <ul class="ticks">
+            <li><svg class="ic"><use href="#i-check"/></svg> 8 piezas mensuales</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Reporte quincenal</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Campaña publicitaria básica</li>
           </ul>
+          <div class="plan__btns">
+            <button class="btn btn--primary" data-choose>Elegir este plan</button>
+            <a class="btn btn--wa" data-wa="Hola Nexus Media, quiero consultar el plan Crecimiento Activo ($600.000 COP)." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> Consultar por WhatsApp</a>
+          </div>
+        </div>
+      </article>
 
-          <a class="btn btn-primary" href="nexus-media/index.html">
-            Abrir Nexus Media →
-          </a>
+      <article class="plan reveal" style="--d:.12s" data-plan="Presencia Avanzada">
+        <div class="plan__img"><img src="assets/img/jordan-sm.webp" alt="Ejemplo de flyer publicitario" loading="lazy" width="600" height="900"></div>
+        <div class="plan__body">
+          <span class="plan__n">Plan 3</span>
+          <h3>Presencia Avanzada</h3>
+          <p class="price"><strong>$900.000</strong> <small>COP / mes</small></p>
+          <ul class="ticks">
+            <li><svg class="ic"><use href="#i-check"/></svg> 12 piezas mensuales</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Reporte semanal</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Campaña publicitaria y Google Ads</li>
+          </ul>
+          <div class="plan__btns">
+            <button class="btn btn--primary" data-choose>Elegir este plan</button>
+            <a class="btn btn--wa" data-wa="Hola Nexus Media, quiero consultar el plan Presencia Avanzada ($900.000 COP)." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> Consultar por WhatsApp</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="plan reveal" style="--d:.18s" data-plan="Dominio Digital">
+        <div class="plan__img"><img src="assets/img/timberland-sm.webp" alt="Ejemplo de catálogo de producto" loading="lazy" width="600" height="640"></div>
+        <div class="plan__body">
+          <span class="plan__n">Plan 4</span>
+          <h3>Dominio Digital</h3>
+          <p class="price"><strong>$1.250.000</strong> <small>COP / mes</small></p>
+          <ul class="ticks">
+            <li><svg class="ic"><use href="#i-check"/></svg> 16 piezas mensuales</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Gestión ampliada de redes sociales</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Campañas publicitarias integrales en múltiples canales</li>
+          </ul>
+          <div class="plan__btns">
+            <button class="btn btn--primary" data-choose>Elegir este plan</button>
+            <a class="btn btn--wa" data-wa="Hola Nexus Media, quiero consultar el plan Dominio Digital ($1.250.000 COP)." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> Consultar por WhatsApp</a>
+          </div>
         </div>
       </article>
     </div>
 
-    <footer>
-      © 2026 Proyectos Web Optimizados · Diseñado para máxima velocidad, diseño moderno y conversión comercial.
-    </footer>
+    <!-- ============ CALCULADORA DE PLAN PERSONALIZADO ============ -->
+    <div class="calc-box reveal">
+      <div class="calc-head">
+        <h3>Calculadora de Inversión y Plan Personalizado</h3>
+        <p class="lead" style="margin-bottom:0">Arma una solución adaptada a tu presupuesto combinando piezas, campañas y servicios adicionales.</p>
+      </div>
+      <div class="calc-grid">
+        <div class="calc-group">
+          <label for="calcBasePlan">1. Elige tu Plan Base Mensual</label>
+          <select class="calc-select" id="calcBasePlan">
+            <option value="400000" selected>Plan 1: Lanzamiento Digital ($400.000 COP / mes)</option>
+            <option value="600000">Plan 2: Crecimiento Activo ($600.000 COP / mes)</option>
+            <option value="900000">Plan 3: Presencia Avanzada ($900.000 COP / mes)</option>
+            <option value="1250000">Plan 4: Dominio Digital ($1.250.000 COP / mes)</option>
+          </select>
+
+          <label style="margin-top:20px">2. Adicionales y Potenciadores</label>
+          <div class="calc-addons">
+            <label class="addon-item">
+              <input type="checkbox" class="calc-add" value="250000" data-label="4 Reels dinámicos">
+              <span class="addon-text">+4 Reels / TikToks en movimiento con audio tendencia</span>
+              <span class="addon-price">+$250.000</span>
+            </label>
+            <label class="addon-item">
+              <input type="checkbox" class="calc-add" value="300000" data-label="Campaña Meta Ads con IA">
+              <span class="addon-text">Campaña de Publicidad en Meta Ads con segmentación IA</span>
+              <span class="addon-price">+$300.000</span>
+            </label>
+            <label class="addon-item">
+              <input type="checkbox" class="calc-add" value="350000" data-label="Rediseño de Identidad de Marca">
+              <span class="addon-text">Rediseño o pulido de Identidad Visual / Logo y Guía</span>
+              <span class="addon-price">+$350.000</span>
+            </label>
+            <label class="addon-item">
+              <input type="checkbox" class="calc-add" value="200000" data-label="Catálogo de producto digital">
+              <span class="addon-text">Sesión de fotos de producto o catálogo digital</span>
+              <span class="addon-price">+$200.000</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="calc-summary">
+          <div>
+            <span style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;font-weight:700">Inversión mensual estimada</span>
+            <div class="calc-total-amount" id="calcTotal">$400.000 <small style="font-size:0.9rem;color:var(--muted)">COP / mes</small></div>
+          </div>
+          <p style="font-size:0.88rem;color:var(--muted)">Sin contratos forzosos. Incluye acompañamiento directo y reporte de métricas.</p>
+          <a class="btn btn--wa btn--block" id="calcWaBtn" target="_blank" rel="noopener">
+            <svg class="ic"><use href="#i-wa"/></svg> Cotizar este paquete por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="note reveal">¿Necesitas algo distinto? También armamos <a href="#contacto" data-pick-service="Servicio personalizado">propuestas a la medida</a>. Los precios son de referencia en pesos colombianos; confirma condiciones por WhatsApp.</p>
   </div>
+</section>
+
+<!-- ============ PORTAFOLIO ============ -->
+<section class="section" id="portafolio">
+  <div class="wrap">
+    <header class="head reveal">
+      <h2>Ideas que se convierten en piezas que se ven</h2>
+      <p class="lead">Una muestra de nuestro trabajo en diseño, contenido y video. Haz clic en cualquier pieza para verla en grande.</p>
+    </header>
+
+    <div class="filters reveal" role="group" aria-label="Filtrar portafolio">
+      <button class="filter is-on" data-filter="all" aria-pressed="true">Todos</button>
+      <button class="filter" data-filter="flyers" aria-pressed="false">Flyers publicitarios</button>
+      <button class="filter" data-filter="redes" aria-pressed="false">Contenido para redes</button>
+      <button class="filter" data-filter="campanas" aria-pressed="false">Campañas publicitarias</button>
+      <button class="filter" data-filter="audiovisual" aria-pressed="false">Audiovisual</button>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <button class="work" data-cats="flyers campanas" data-type="image" data-full="assets/img/jordan.webp" data-title="Air Jordan 4 Retro" data-catlabel="Flyer publicitario" data-desc="Flyer publicitario en formato vertical con estética urbana: tipografía de pincel, texturas de grafiti y detalles del producto." aria-label="Ver proyecto Air Jordan 4 Retro">
+        <img src="assets/img/jordan-sm.webp" alt="Flyer publicitario Air Jordan 4 Retro" loading="lazy" width="600" height="900">
+        <span class="work__cap"><b>Air Jordan 4 Retro</b><small>Flyer publicitario</small></span>
+      </button>
+      <button class="work" data-cats="redes campanas" data-type="image" data-full="assets/img/monster.webp" data-title="Monster Energy" data-catlabel="Campaña · Redes sociales" data-desc="Pieza publicitaria de producto con luz de neón, gotas de condensación y rocas oscuras para una imagen de alto impacto." aria-label="Ver proyecto Monster Energy">
+        <img src="assets/img/monster-sm.webp" alt="Publicación de Monster Energy" loading="lazy" width="600" height="640">
+        <span class="work__cap"><b>Monster Energy</b><small>Campaña · Redes sociales</small></span>
+      </button>
+      <button class="work" data-cats="redes campanas" data-type="image" data-full="assets/img/monster-ultra.webp" data-title="Monster Ultra" data-catlabel="Campaña · Redes sociales" data-desc="Variante en tonos fríos con hielo y reflejos, pensada para comunicar un producto zero azúcar." aria-label="Ver proyecto Monster Ultra">
+        <img src="assets/img/monster-ultra-sm.webp" alt="Publicación de Monster Ultra" loading="lazy" width="600" height="640">
+        <span class="work__cap"><b>Monster Ultra</b><small>Campaña · Redes sociales</small></span>
+      </button>
+      <button class="work" data-cats="redes campanas" data-type="image" data-full="assets/img/colombiana.webp" data-title="Colombiana" data-catlabel="Campaña · Redes sociales" data-desc="Publicación cuadrada para redes con identidad colombiana: colores de la bandera, hielo y beneficios clave del producto." aria-label="Ver proyecto Colombiana">
+        <img src="assets/img/colombiana-sm.webp" alt="Publicación de Colombiana" loading="lazy" width="600" height="600">
+        <span class="work__cap"><b>Colombiana</b><small>Campaña · Redes sociales</small></span>
+      </button>
+      <button class="work" data-cats="flyers campanas" data-type="image" data-full="assets/img/timberland.webp" data-title="Classic Work Boot" data-catlabel="Catálogo de producto" data-desc="Composición tipo catálogo con vista principal, detalles de materiales, suela y beneficios del producto." aria-label="Ver proyecto Classic Work Boot">
+        <img src="assets/img/timberland-sm.webp" alt="Catálogo de producto Classic Work Boot" loading="lazy" width="600" height="640">
+        <span class="work__cap"><b>Classic Work Boot</b><small>Catálogo de producto</small></span>
+      </button>
+      <button class="work work--video" data-cats="audiovisual campanas" data-type="video" data-full="assets/video/comercial.mp4" data-poster="assets/video/poster.jpg" data-title="Comercial de producto" data-catlabel="Producción audiovisual" data-desc="Video publicitario de producto con planos de detalle y movimiento de cámara cinematográfico." aria-label="Ver video Comercial de producto">
+        <img src="assets/video/poster.jpg" alt="Fotograma del comercial de producto" loading="lazy" width="1472" height="624">
+        <span class="work__play"><svg class="ic ic--fill"><use href="#i-play"/></svg></span>
+        <span class="work__cap"><b>Comercial de producto</b><small>Producción audiovisual</small></span>
+      </button>
+    </div>
+
+    <p class="note reveal">Las marcas y productos que aparecen pertenecen a sus respectivos titulares y se muestran como ejemplos de diseño y producción.</p>
+  </div>
+</section>
+
+<!-- ============ NOSOTROS ============ -->
+<section class="section section--dark" id="nosotros">
+  <div class="wrap about">
+    <div class="about__copy reveal">
+      <h2>Conectamos marcas con su público a través de la creatividad</h2>
+      <p>En Nexus Media unimos comunicación visual, estrategia y tecnología para que las empresas se vean y se sientan como lo que quieren llegar a ser. Nuestro propósito es sencillo: ayudar a tu marca a pasar al siguiente nivel.</p>
+      <p class="about__slogan">“Tu marca, llevada al siguiente nivel”</p>
+      <a class="btn btn--light" href="#contacto" data-pick-service="">Hablemos de tu proyecto <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal"><svg class="ic"><use href="#i-zap"/></svg><h3>Innovación</h3><p>Exploramos nuevas herramientas, incluida la inteligencia artificial, para crear con más agilidad.</p></div>
+      <div class="pillar reveal" style="--d:.06s"><svg class="ic"><use href="#i-eye"/></svg><h3>Comunicación visual</h3><p>Cada pieza se diseña para que tu mensaje se entienda de un vistazo y se recuerde.</p></div>
+      <div class="pillar reveal" style="--d:.12s"><svg class="ic"><use href="#i-target"/></svg><h3>Propuesta de valor</h3><p>Creatividad, tecnología y estrategia en un solo equipo, enfocado en tus objetivos.</p></div>
+      <div class="pillar reveal" style="--d:.18s"><svg class="ic"><use href="#i-layers"/></svg><h3>Filosofía creativa</h3><p>Ideas con intención: diseño coherente en todos los puntos donde tu marca aparece.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIOS ============ -->
+<section class="testimonials-section" id="testimonios">
+  <div class="wrap">
+    <header class="head reveal" style="text-align:center">
+      <h2>Marcas que confían en nosotros</h2>
+      <p class="lead" style="margin-inline:auto">Resultados medibles, comunicación fluida y piezas creativas que marcan la diferencia.</p>
+    </header>
+
+    <div class="testimonials-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"El contenido para redes y el video publicitario superaron nuestras expectativas. Tuvimos un incremento del 45% en consultas por WhatsApp durante el primer mes de campaña."</p>
+        <div class="testi-user">
+          <div class="testi-avatar">CR</div>
+          <div class="testi-info">
+            <b>Camila Restrepo</b>
+            <span>Directora de Marketing · Moda & Calzado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal" style="--d:.06s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Su capacidad para combinar diseño gráfico moderno con herramientas de IA redujo nuestros tiempos de entrega a la mitad sin perder ni un milímetro de calidad visual."</p>
+        <div class="testi-user">
+          <div class="testi-avatar">JP</div>
+          <div class="testi-info">
+            <b>Javier Peña</b>
+            <span>Fundador · TechFlow Digital</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal" style="--d:.12s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"El comercial en video de nuestro producto parecía producido por una agencia internacional. 100% recomendados si buscas elevar la imagen de tu negocio."</p>
+        <div class="testi-user">
+          <div class="testi-avatar">MG</div>
+          <div class="testi-info">
+            <b>Mateo Gómez</b>
+            <span>CEO · Urban Gear Colombia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="section" id="contacto">
+  <div class="wrap">
+    <header class="head reveal">
+      <h2>Hablemos de tu próximo proyecto</h2>
+      <p class="lead">Escríbenos por WhatsApp o por correo. Te respondemos para armar la propuesta que tu marca necesita.</p>
+    </header>
+
+    <div class="contact">
+      <div class="contact__side reveal">
+        <div class="wa-card">
+          <div class="wa-card__top">
+            <span class="wa-card__ic"><svg class="ic"><use href="#i-wa"/></svg></span>
+            <div><b>WhatsApp</b><span>312 244 3058</span></div>
+          </div>
+          <label for="waMsg">Mensaje listo para enviar (puedes editarlo)</label>
+          <textarea id="waMsg" rows="4">Hola Nexus Media, quiero información sobre sus servicios y planes.</textarea>
+          <a class="btn btn--wa btn--block" id="waQuick" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> Enviar mensaje por WhatsApp</a>
+        </div>
+        <a class="mail-card" href="mailto:nexusmedia.ees@gmail.com?subject=Consulta%20Nexus%20Media">
+          <span class="mail-card__ic"><svg class="ic"><use href="#i-mail"/></svg></span>
+          <div><b>Correo electrónico</b><span>nexusmedia.ees@gmail.com</span></div>
+        </a>
+        <a class="mail-card" href="tel:+573122443058">
+          <span class="mail-card__ic"><svg class="ic"><use href="#i-phone"/></svg></span>
+          <div><b>Llamar</b><span>312 244 3058</span></div>
+        </a>
+      </div>
+
+      <form class="form reveal" id="contactForm" novalidate style="--d:.08s">
+        <h3>Cuéntanos qué necesitas</h3>
+        <div class="field">
+          <label for="cName">Nombre</label>
+          <input id="cName" name="name" type="text" autocomplete="name" required>
+          <span class="err" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="cContact">Correo electrónico o teléfono</label>
+          <input id="cContact" name="contact" type="text" autocomplete="email" required>
+          <span class="err" aria-live="polite"></span>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="cService">Servicio de interés</label>
+            <select id="cService" name="service">
+              <option value="">Selecciona…</option>
+              <option>Diseño gráfico</option>
+              <option>Producción audiovisual</option>
+              <option>Fotografía</option>
+              <option>Marketing digital</option>
+              <option>Gestión de redes sociales</option>
+              <option>Soluciones con inteligencia artificial</option>
+              <option>Servicio personalizado</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cPlan">Plan que desea consultar</label>
+            <select id="cPlan" name="plan">
+              <option value="">Ninguno / aún no sé</option>
+              <option>Lanzamiento Digital — $400.000</option>
+              <option>Crecimiento Activo — $600.000</option>
+              <option>Presencia Avanzada — $900.000</option>
+              <option>Dominio Digital — $1.250.000</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cMsg">Mensaje</label>
+          <textarea id="cMsg" name="message" rows="4" required></textarea>
+          <span class="err" aria-live="polite"></span>
+        </div>
+        <div class="form__btns">
+          <button type="submit" class="btn btn--wa"><svg class="ic"><use href="#i-wa"/></svg> Enviar por WhatsApp</button>
+          <button type="button" class="btn btn--ghost" data-send-mail><svg class="ic"><use href="#i-mail"/></svg> Enviar por correo</button>
+        </div>
+        <p class="form__ok" id="formOk" role="status" hidden></p>
+        <p class="form__hint">Al enviar, se abre WhatsApp o tu app de correo con el mensaje ya redactado. El mensaje no se envía hasta que tú lo confirmes allí.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section--tint" id="faq">
+  <div class="wrap wrap--narrow">
+    <header class="head reveal">
+      <h2>Resolvemos tus dudas</h2>
+    </header>
+    <div class="faq reveal">
+      <details><summary>¿Qué servicios ofrece Nexus Media?<svg class="ic"><use href="#i-plus"/></svg></summary><p>Diseño gráfico, producción audiovisual, fotografía, marketing digital, gestión de redes sociales y soluciones con inteligencia artificial.</p></details>
+      <details><summary>¿Cómo puedo contratar un plan?<svg class="ic"><use href="#i-plus"/></svg></summary><p>Elige el plan en la sección Planes y pulsa «Elegir este plan», o escríbenos por WhatsApp. Te confirmaremos los detalles y los siguientes pasos.</p></details>
+      <details><summary>¿Puedo solicitar un servicio personalizado?<svg class="ic"><use href="#i-plus"/></svg></summary><p>Sí. Cuéntanos qué necesitas por WhatsApp o desde el formulario de contacto y te orientamos con una propuesta acorde a tu proyecto.</p></details>
+      <details><summary>¿Cómo se entregan los diseños y videos?<svg class="ic"><use href="#i-plus"/></svg></summary><p>Coordinamos la entrega contigo durante el proyecto. Escríbenos y te explicamos los formatos y la forma de entrega para tu caso.</p></details>
+      <details><summary>¿Cómo puedo solicitar una cotización?<svg class="ic"><use href="#i-plus"/></svg></summary><p>Escríbenos por WhatsApp al 312 244 3058 o al correo nexusmedia.ees@gmail.com contándonos qué necesitas, o usa el formulario de contacto.</p></details>
+      <details><summary>¿Qué información debo proporcionar para iniciar un proyecto?<svg class="ic"><use href="#i-plus"/></svg></summary><p>Lo ideal es contarnos sobre tu marca, qué quieres lograr, el servicio que te interesa y, si los tienes, tu logo y referencias que te gusten.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap footer__in">
+    <div class="footer__brand">
+      <img src="assets/img/logo-full.png" alt="Nexus Media" width="362" height="104" loading="lazy">
+      <p>Agencia creativa que combina diseño, contenido, tecnología e inteligencia artificial para llevar tu marca al siguiente nivel.</p>
+    </div>
+    <nav aria-label="Navegación del pie">
+      <h4>Navegación</h4>
+      <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#planes">Planes</a><a href="#portafolio">Portafolio</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a>
+    </nav>
+    <nav aria-label="Servicios">
+      <h4>Servicios</h4>
+      <a href="#servicios">Diseño gráfico</a><a href="#servicios">Producción audiovisual</a><a href="#servicios">Fotografía</a><a href="#servicios">Marketing digital</a><a href="#servicios">Redes sociales</a><a href="#servicios">Soluciones con IA</a>
+    </nav>
+    <div>
+      <h4>Contacto</h4>
+      <a href="mailto:nexusmedia.ees@gmail.com">nexusmedia.ees@gmail.com</a>
+      <a data-wa="Hola Nexus Media, quiero información sobre sus servicios." target="_blank" rel="noopener">WhatsApp: 312 244 3058</a>
+    </div>
+  </div>
+  <div class="wrap footer__bar">
+    <span>© <span id="year">2026</span> Nexus Media. Todos los derechos reservados.</span>
+    <span class="footer__legal"><button data-legal="privacidad">Política de privacidad</button> · <button data-legal="datos">Tratamiento de datos</button></span>
+  </div>
+</footer>
+
+<!-- Botón flotante WhatsApp -->
+<a class="fab" id="fab" data-wa="Hola Nexus Media, quiero información sobre sus servicios." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Nexus Media">
+  <svg class="ic"><use href="#i-wa"/></svg><span>WhatsApp</span>
+</a>
+
+<!-- ============ MODAL: ELEGIR PLAN ============ -->
+<dialog class="modal" id="planModal" aria-labelledby="planTitle">
+  <form class="modal__in" id="planForm" novalidate>
+    <button type="button" class="modal__x" data-close aria-label="Cerrar"><svg class="ic"><use href="#i-x"/></svg></button>
+    <h3 id="planTitle">Plan</h3>
+    <p class="modal__price" id="planPrice"></p>
+    <div class="field"><label for="pName">Nombre</label><input id="pName" type="text" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+    <div class="field"><label for="pContact">Correo electrónico o teléfono</label><input id="pContact" type="text" required><span class="err" aria-live="polite"></span></div>
+    <div class="field"><label for="pMsg">Mensaje (opcional)</label><textarea id="pMsg" rows="3" placeholder="Cuéntanos sobre tu marca o lo que necesitas"></textarea></div>
+    <div class="form__btns">
+      <button type="submit" class="btn btn--wa"><svg class="ic"><use href="#i-wa"/></svg> Continuar por WhatsApp</button>
+      <button type="button" class="btn btn--ghost" data-send-mail><svg class="ic"><use href="#i-mail"/></svg> Enviar por correo</button>
+    </div>
+    <p class="form__ok" id="planOk" role="status" hidden></p>
+    <p class="form__hint">Se abrirá WhatsApp o tu correo con el mensaje ya preparado. No se envía nada hasta que lo confirmes.</p>
+  </form>
+</dialog>
+
+<!-- ============ MODAL: PORTAFOLIO ============ -->
+<dialog class="modal modal--lb" id="lightbox" aria-labelledby="lbTitle">
+  <div class="lb">
+    <button type="button" class="modal__x" data-close aria-label="Cerrar"><svg class="ic"><use href="#i-x"/></svg></button>
+    <button type="button" class="lb__nav lb__nav--prev" id="lbPrev" aria-label="Anterior"><svg class="ic"><use href="#i-left"/></svg></button>
+    <button type="button" class="lb__nav lb__nav--next" id="lbNext" aria-label="Siguiente"><svg class="ic"><use href="#i-right"/></svg></button>
+    <div class="lb__media" id="lbMedia"></div>
+    <div class="lb__info">
+      <span class="lb__cat" id="lbCat"></span>
+      <h3 id="lbTitle"></h3>
+      <p id="lbDesc"></p>
+      <div class="lb__foot">
+        <a class="btn btn--wa" id="lbWa" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> Quiero algo así</a>
+        <span class="lb__count" id="lbCount"></span>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- ============ MODAL: LEGAL ============ -->
+<dialog class="modal" id="legalModal" aria-labelledby="legalTitle">
+  <div class="modal__in">
+    <button type="button" class="modal__x" data-close aria-label="Cerrar"><svg class="ic"><use href="#i-x"/></svg></button>
+    <h3 id="legalTitle"></h3>
+    <div id="legalBody" class="legal"></div>
+  </div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
