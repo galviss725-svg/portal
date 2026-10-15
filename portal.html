@@ -3,21 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nexus Hub — Portafolio de Proyectos Web Profesionales</title>
-  <meta name="description" content="Centro de acceso a los proyectos web desarrollados: NEXORA PC (Tienda Gaming & Configurador) y Nexus Media (Agencia Creativa Digital).">
+  <title>Nexus Hub — Acceso a Nexus Media</title>
+  <meta name="description" content="Acceso oficial a Nexus Media — Agencia Creativa Digital: diseño gráfico, producción audiovisual cinematográfica, marketing digital y soluciones con inteligencia artificial.">
+  <link rel="icon" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #07090e;
-      --card-bg: #0f131f;
-      --cyan: #00f2fe;
-      --violet: #8b5cf6;
-      --blue: #2563eb;
+      --bg: #070B16;
+      --card-bg: #0D1428;
+      --cyan: #00B7FF;
+      --violet: #9657FF;
+      --blue: #087BFF;
       --grad: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 50%, var(--violet) 100%);
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
+      --text: #F7F8FC;
+      --text-muted: #AAB2C5;
+      --line: rgba(140, 160, 255, 0.16);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -28,41 +30,41 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
       background-image: 
-        radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(0, 242, 254, 0.12) 0%, transparent 45%);
+        radial-gradient(circle at 15% 20%, rgba(120, 59, 255, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(0, 183, 255, 0.18) 0%, transparent 50%);
     }
     .wrap {
-      width: min(1180px, 100%);
+      width: min(880px, 100%);
       margin: 0 auto;
     }
     header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(0, 242, 254, 0.12);
-      border: 1px solid rgba(0, 242, 254, 0.3);
+      background: rgba(0, 183, 255, 0.12);
+      border: 1px solid rgba(0, 183, 255, 0.35);
       color: var(--cyan);
       font-size: 0.8rem;
       font-weight: 700;
-      padding: 6px 16px;
+      padding: 6px 18px;
       border-radius: 999px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
     .badge::before {
       content: "";
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 8px var(--cyan);
+      background: #22c55e;
+      box-shadow: 0 0 10px #22c55e;
     }
     h1 {
       font-family: 'Sora', sans-serif;
@@ -79,261 +81,231 @@
     p.lead {
       color: var(--text-muted);
       font-size: 1.1rem;
-      max-width: 650px;
+      max-width: 620px;
       margin: 0 auto;
       line-height: 1.6;
     }
-    .portal-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 36px;
-    }
-    .portal-card {
+
+    /* Tarjeta Principal Exclusiva de Nexus Media */
+    .showcase-card {
       background: var(--card-bg);
-      border: 1px solid rgba(139, 92, 246, 0.25);
-      border-radius: 24px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 35px 80px -25px rgba(8, 123, 255, 0.4);
+      transition: all 0.35s ease;
       position: relative;
     }
-    .portal-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--cyan);
-      box-shadow: 0 25px 60px -15px rgba(0, 242, 254, 0.3);
+    .showcase-card:hover {
+      border-color: rgba(0, 183, 255, 0.5);
+      box-shadow: 0 40px 90px -20px rgba(120, 59, 255, 0.55);
     }
-
-    /* Área de Previsualización: Proporción perfecta sin aplastamiento */
-    .card-preview {
-      aspect-ratio: 16/9;
-      background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15) 0%, #090c15 85%);
-      position: relative;
-      overflow: hidden;
+    .preview-box {
+      aspect-ratio: 21/9;
+      background: radial-gradient(circle at center, rgba(8, 123, 255, 0.25) 0%, #060913 85%);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 24px;
-      border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
     }
-    .card-preview img {
+    .preview-box img {
       max-width: 100%;
       max-height: 100%;
       width: auto;
       height: auto;
       object-fit: contain;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
-      transition: transform 0.4s ease;
+      filter: drop-shadow(0 15px 30px rgba(0,0,0,0.7));
+      transition: transform 0.5s ease;
       display: block;
     }
-    .portal-card:hover .card-preview img {
-      transform: scale(1.05);
+    .showcase-card:hover .preview-box img {
+      transform: scale(1.03);
     }
-
-    /* Cabecera de Logo en la Tarjeta */
-    .card-logo-bar {
+    .card-content {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+      flex-wrap: wrap;
     }
-    .logo-badge-nexora {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 0.05em;
-    }
-    .logo-symbol-sm {
-      width: 38px;
-      height: 38px;
-      background: var(--grad);
-      border-radius: 9px;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 0 16px rgba(0, 242, 254, 0.35);
-      flex-shrink: 0;
-    }
-    .logo-symbol-sm svg {
-      width: 22px;
-      height: 22px;
-      fill: #050811;
-    }
-    .logo-badge-nexora span {
-      color: var(--cyan);
-    }
-
-    /* Logo oficial de Nexus Media con proporción 100% natural */
-    .nexus-logo-img {
-      height: 44px;
+    .brand-logo-img {
+      height: 48px;
       width: auto;
-      max-width: 200px;
+      max-width: 220px;
       object-fit: contain;
       display: block;
     }
-
-    .card-content {
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .card-tag {
-      font-size: 0.76rem;
+    .brand-tag {
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--cyan);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      background: rgba(0, 242, 254, 0.1);
-      border: 1px solid rgba(0, 242, 254, 0.25);
-      padding: 4px 10px;
+      background: rgba(0, 183, 255, 0.12);
+      border: 1px solid rgba(0, 183, 255, 0.3);
+      padding: 5px 14px;
       border-radius: 999px;
-      white-space: nowrap;
     }
     h2 {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 1.85rem;
+      font-family: 'Sora', sans-serif;
+      font-size: 2rem;
       margin-bottom: 12px;
+      color: #fff;
     }
     .desc {
       color: var(--text-muted);
-      font-size: 0.96rem;
-      line-height: 1.6;
-      margin-bottom: 22px;
-    }
-    .feature-list {
-      list-style: none;
-      display: grid;
-      gap: 10px;
+      font-size: 1.05rem;
+      line-height: 1.65;
       margin-bottom: 28px;
-      font-size: 0.9rem;
-      color: #cbd5e1;
     }
-    .feature-list li {
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+    .feature-item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: #dfe3f1;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid var(--line);
+      padding: 12px 16px;
+      border-radius: 14px;
     }
-    .feature-list li::before {
+    .feature-item::before {
       content: "✓";
       color: var(--cyan);
       font-weight: 800;
     }
-    .btn {
+    .btn-main {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 0.95rem;
+      gap: 12px;
+      padding: 16px 36px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 1.05rem;
       text-decoration: none;
       cursor: pointer;
-      border: none;
-      transition: all 0.25s;
-      margin-top: auto;
-    }
-    .btn-primary {
       background: var(--grad);
-      color: #050811;
-      box-shadow: 0 10px 25px -8px rgba(0, 242, 254, 0.5);
+      color: #fff;
+      box-shadow: 0 12px 30px -8px rgba(8, 123, 255, 0.7);
+      transition: all 0.25s;
     }
-    .btn-primary:hover {
-      box-shadow: 0 14px 35px -5px rgba(0, 242, 254, 0.75);
-      filter: brightness(1.1);
+    .btn-main:hover {
       transform: translateY(-2px);
+      box-shadow: 0 16px 40px -6px rgba(0, 183, 255, 0.85);
+      filter: brightness(1.1);
     }
+
+    /* Enlace Aparte para PC Gaming */
+    .alt-access-bar {
+      margin-top: 36px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+    .alt-access-bar a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .alt-access-bar a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 40px;
       color: var(--text-muted);
-      font-size: 0.88rem;
+      font-size: 0.85rem;
     }
-    @media (max-width: 860px) {
-      .portal-grid { grid-template-columns: 1fr; }
+    @media (max-width: 700px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      .preview-box { aspect-ratio: 16/9; }
+      .card-content { padding: 26px 20px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="badge">Portafolio de Proyectos Web</div>
-      <h1>Experiencias Web <span>de Alto Nivel</span></h1>
-      <p class="lead">Selecciona cualquiera de las dos páginas web optimizadas para abrirlas de inmediato en tu navegador con diseño ultra profesional y funciones interactivas.</p>
+      <div class="badge">Agencia Creativa & Estrategia Digital</div>
+      <h1>Tu marca, llevada al <span>siguiente nivel</span></h1>
+      <p class="lead">Conectamos creatividad, producción audiovisual de alto impacto y soluciones con inteligencia artificial para marcas que quieren destacar.</p>
     </header>
 
-    <div class="portal-grid">
-      <!-- Card 1: NEXORA PC -->
-      <article class="portal-card">
-        <div class="card-preview">
-          <img src="imagenes/pcgam_newj.1280.webp" alt="NEXORA PC — Tienda Gaming & Configurador">
+    <!-- Tarjeta Principal: Nexus Media -->
+    <article class="showcase-card">
+      <div class="preview-box">
+        <img src="assets/img/banner-visual.webp" alt="Nexus Media — Creatividad, Tecnología e IA">
+      </div>
+
+      <div class="card-content">
+        <div class="brand-header">
+          <img src="assets/img/logo-full.png" alt="Nexus Media Logo" class="brand-logo-img">
+          <span class="brand-tag">Sitio Web Principal</span>
         </div>
-        <div class="card-content">
-          <div class="card-logo-bar">
-            <div class="logo-badge-nexora">
-              <div class="logo-symbol-sm">
-                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              <div>NEXORA<span>PC</span></div>
-            </div>
-            <span class="card-tag">Hardware & Gaming</span>
-          </div>
 
-          <h2>NEXORA PC</h2>
-          <p class="desc">Plataforma de venta de computadores gamer, workstations y componentes de alta gama en Colombia. Ensambles certificados y estética cyberpunk.</p>
-          
-          <ul class="feature-list">
-            <li>Catálogo interactivo con precios en COP y filtros por presupuesto</li>
-            <li>Calculadora dinámica de FPS estimada por juego y resolución</li>
-            <li>Configurador "Arma tu PC" con validación de compatibilidad</li>
-            <li>Carrito de compras y checkout directo con mensaje formateado por WhatsApp</li>
-            <li>Sección de testimonios de gamers y políticas de garantía en Colombia</li>
-          </ul>
+        <h2>Nexus Media Oficial</h2>
+        <p class="desc">
+          Explora la experiencia digital completa: portafolio de piezas publicitarias, showreel de video cinematográfico en movimiento, calculadora interactiva de inversión y atención directa por WhatsApp.
+        </p>
 
-          <a class="btn btn-primary" href="nexora.html">
-            Abrir NEXORA PC →
-          </a>
+        <div class="feature-grid">
+          <div class="feature-item">Diseño gráfico y branding de identidad</div>
+          <div class="feature-item">Producción audiovisual cinematográfica</div>
+          <div class="feature-item">Campañas de marketing digital & Meta Ads</div>
+          <div class="feature-item">Soluciones creativas con inteligencia artificial</div>
         </div>
-      </article>
 
-      <!-- Card 2: NEXUS MEDIA -->
-      <article class="portal-card">
-        <div class="card-preview">
-          <img src="nexus-media/nexus-media/assets/img/banner-visual.webp" alt="Nexus Media — Agencia Creativa Digital">
-        </div>
-        <div class="card-content">
-          <div class="card-logo-bar">
-            <img src="nexus-media/nexus-media/assets/img/logo-full.png" alt="Nexus Media Logo" class="nexus-logo-img">
-            <span class="card-tag">Agencia Creativa</span>
-          </div>
+        <a class="btn-main" href="index.html">
+          Entrar a Nexus Media Oficial →
+        </a>
+      </div>
+    </article>
 
-          <h2>Nexus Media</h2>
-          <p class="desc">Sitio web corporativo de agencia creativa de medios: diseño gráfico, producción audiovisual cinematográfica, marketing digital y soluciones con inteligencia artificial.</p>
-
-          <ul class="feature-list">
-            <li>Showreel comercial interactivo en video para campañas de producto</li>
-            <li>Galería de portafolio tipo Lightbox con filtros por categoría</li>
-            <li>Sección de métricas clave (+48 marcas, +1.5M visualizaciones)</li>
-            <li>Calculadora interactiva de inversión mensual y adicionales</li>
-            <li>Testimonios de marcas clientes y contacto directo por WhatsApp y correo</li>
-          </ul>
-
-          <a class="btn btn-primary" href="nexus-media/index.html">
-            Abrir Nexus Media →
-          </a>
-        </div>
-      </article>
+    <!-- Enlace Aparte para NEXORA PC Gaming -->
+    <div class="alt-access-bar">
+      <span>🎮 ¿Deseas ver la tienda de hardware y computadores gaming?</span>
+      <a href="nexora.html" target="_blank" rel="noopener">
+        Abrir NEXORA PC (enlace aparte) ↗
+      </a>
     </div>
 
     <footer>
-      © 2026 Proyectos Web Optimizados · Diseñado para máxima velocidad, diseño moderno y conversión comercial.
+      © 2026 Nexus Media. Todos los derechos reservados.
     </footer>
   </div>
 </body>
